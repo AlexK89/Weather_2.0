@@ -5,7 +5,7 @@ var date = new Date();
 var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 if (date.getDay()+3 > 6) {
-    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 7];
+    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 4];
 } else {
     document.getElementById("dayThreeName").innerHTML = week[date.getDay()+2];
 }
