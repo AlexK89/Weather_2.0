@@ -35,7 +35,7 @@ function putData() {
         }
         // =========================
 
-        document.getElementById(img).innerHTML = '<img src = https:' + objData.forecast.forecastday[i].day.condition.icon + ' alt = "weather image">';
+        document.getElementById(img).innerHTML = '<img src = "./img/' + objData.forecast.forecastday[i].day.condition.code + '.png" alt = "weather image">';
         document.getElementById(cond).innerHTML = "Condition: " + objData.forecast.forecastday[i].day.condition.text;
         document.getElementById(temp).innerHTML = "Day temperature: " + degree;
         document.getElementById(hum).innerHTML = "Humidity: " + Math.round(objData.forecast.forecastday[i].day.avghumidity) + "%";
@@ -95,8 +95,12 @@ function inputVal(){
         url: "https://api.apixu.com/v1/forecast.json?key=32b5b567c77b4a20aa5161100170807&q=" + document.getElementById("input").value + "&days=3",
         success: function(result) {
             console.log(result);
+            document.getElementById("warning").innerHTML = "";
             objData = result;
             putData();
+        },
+        error: function(result){
+          document.getElementById("warning").innerHTML = "Please write correct city name";
         }
     });
   }
