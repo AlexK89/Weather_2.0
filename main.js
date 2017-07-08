@@ -51,7 +51,7 @@ function putData() {
 
 var options = {
     enableHighAccuracy: true,
-    timeout: 4000,
+    // timeout: 8000,
     maximumAge: 0
 };
 
