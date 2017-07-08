@@ -4,10 +4,10 @@ var objData;
 var date = new Date();
 var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-if (date.getDay() > 4) {
-    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 5];
+if (date.getDay()+3 > 6) {
+    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 7];
 } else {
-    document.getElementById("dayThreeName").innerHTML = week[date.getDay()];
+    document.getElementById("dayThreeName").innerHTML = week[date.getDay()+2];
 }
 
 //==========================
