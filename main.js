@@ -60,20 +60,20 @@ function success(pos) {
     lat = crd.latitude;
     long = crd.longitude;
 
+
     //==========================
     // Get GeoCoordinates
     //==========================
 
+
     function getApi() {
         if (lat && long) {
-            $.ajax({
-                url: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + lat + "&" + "lon=" + long + "&units=metric" + "&APPID=8ce8d052973edd56b69fdc48d4309715",
-                success: function(result) {
-                    console.log(result);
-                    objData = result;
-                    putData();
-                }
-            });
+          $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + lat + "&" + "lon=" + long + "&units=metric" + "&APPID=8ce8d052973edd56b69fdc48d4309715",
+              function(result) {
+                  console.log(result);
+                  objData = result;
+                  putData();
+              });
         }
     }
     getApi();
@@ -81,7 +81,7 @@ function success(pos) {
 
 function error(err) {
     // document.getElementById("block").innerHTML = "ERROR " + err.code + ":" + err.message;
-    console.warn("ERROR " + err.code + " "+ err.message);
+    console.warn("ERROR " + err.code + " " + err.message);
 }
 
 navigator.geolocation.getCurrentPosition(success, error, options);
@@ -89,15 +89,13 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 //==========================
 // Submit form to get weather;
 //==========================
-function inputVal(){
-  if(document.getElementById("input").value){
-    $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + document.getElementById("input").value + "&units=metric" + "&APPID=8ce8d052973edd56b69fdc48d4309715",
-        success: function(result) {
-            console.log(result);
-            objData = result;
-            putData();
-        }
-    });
-  }
+function inputVal() {
+    if (document.getElementById("input").value) {
+      $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + document.getElementById("input").value + "&units=metric" + "&APPID=8ce8d052973edd56b69fdc48d4309715",
+          function(result) {
+              console.log(result);
+              objData = result;
+              putData();
+          });
+    }
 }
