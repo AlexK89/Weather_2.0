@@ -4,12 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
   <title>Weather_2.0</title>
 </head>
 <body>
-  <h1>Hello</h1>
-  <p>Lat: <span id="lat"></span></p>
-  <p>Long: <span id="long"></span></p>
+
+  <div class="row press">
+    <p>C/F</p>
+    <input type="checkbox" onclick="putData()" id="toggle" class="cbx hidden"/>
+    <label for="toggle" class="lbl"></label>
+  </div>
+  <br>
+  <form action="#">
+    <input id="input" type="text" name="" value="" placeholder="Type your city">
+    <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
+  </form>
+  <p id="city"></p>
+  <div id="dayOne">
+    <div id="dayOneHeader">
+      <h2 id="dayOneName">Today</h2>
+      <p id="day0Img"></p>
+      <p id="day0con"></p>
+      <p id="day0Temp"></p>
+    </div>
+    <div class="day0Content">
+      <p id="day0Hum"></p>
+      <p id="day0Pres"></p>
+      <p id="day0Wind"></p>
+      <p id="day0Cloud"></p>
+    </div>
+  </div>
+  <div id="dayTwo">
+    <div id="dayTwoHeader">
+      <h2 id="dayTwoName">Tomorrow</h2>
+      <p id="day1Img"></p>
+      <p id="day1con"></p>
+      <p id="day1Temp"></p>
+    </div>
+    <div class="day1Content">
+      <p id="day1Hum"></p>
+      <p id="day1Pres"></p>
+      <p id="day1Wind"></p>
+      <p id="day1Cloud"></p>
+    </div>
+  </div>
+  <div id="dayThree">
+    <div id="dayThreeHeader">
+      <h2 id="dayThreeName">Third day</h2>
+      <p id="day2Img"></p>
+      <p id="day2con"></p>
+      <p id="day2Temp"></p>
+    </div>
+    <div class="day2Content">
+      <p id="day2Hum"></p>
+      <p id="day2Pres"></p>
+      <p id="day2Wind"></p>
+      <p id="day2Cloud"></p>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="./main.js" charset="utf-8"></script>
 </body>
