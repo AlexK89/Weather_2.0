@@ -24,14 +24,14 @@ function putData() {
         var pres = "day" + i + "Pres";
         var wind = "day" + i + "Wind";
         var cloud = "day" + i + "Cloud";
-        var degree = Math.round(objData.list[i].temp.day);
+        var degree = Math.round(objData.list[i].temp.day) + " C";
 
         //==========================
         // Switch Celsius to Fahrenheit
         //==========================
 
         if (document.getElementById("toggle").checked) {
-            degree = Math.round(objData.list[i].temp.day) * 9 / 5 + 32;
+            degree = Math.round(objData.list[i].temp.day) * 9 / 5 + 32 + " F";
         }
         // =========================
 
