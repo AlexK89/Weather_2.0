@@ -4,8 +4,8 @@ var objData;
 var date = new Date();
 var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-if (date.getDay()+3 > 6) {
-    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 4];
+if (date.getDay()+2 > 6) {
+    document.getElementById("dayThreeName").innerHTML = week[date.getDay() - 5];
 } else {
     document.getElementById("dayThreeName").innerHTML = week[date.getDay()+2];
 }
@@ -15,7 +15,15 @@ if (date.getDay()+3 > 6) {
 //==========================
 
 function putData() {
-    document.getElementById("city").innerHTML = "City: " + objData.location.name;
+    var curDegree = Math.round(objData.current.temp_c) + " C";
+    if (document.getElementById("toggle").checked) {
+        curDegree = Math.round(objData.current.temp_c) * 9 / 5 + 32 + " F";
+    }
+    document.getElementById("city").innerHTML = objData.location.name;
+    document.getElementById("currentImgDesc").innerHTML = objData.current.condition.text;
+    document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" alt = "weather image">';
+    document.getElementById("currentTemp").innerHTML = curDegree;
+
     for (var i = 0; i < 3; i++) {
         var img = "day" + i + "Img";
         var cond = "day" + i + "con";
@@ -51,7 +59,6 @@ function putData() {
 
 var options = {
     enableHighAccuracy: true,
-    // timeout: 8000,
     maximumAge: 0
 };
 

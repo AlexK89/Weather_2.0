@@ -8,62 +8,100 @@
   <title>Weather_2.0</title>
 </head>
 <body>
+  <div class="weatherBlock">
+    <div class="weatherBlockSearch">
+      <form action="#">
+        <input id="input" type="text" name="" value="" placeholder="Type your city">
+        <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
+      </form>
+      <p id="warning"></p>
+    </div>
+    <div class="weatherBlockCurrent">
+        <ul class="weatherBlockCurrentRow">
+          <li class="weatherBlockCurrentRowCity">
+            <p class="flexSubElementBig" id="city">Lviv</p>
+            <p class="flexSubElementSmall">City</p>
+          </li>
+          <li class="weatherBlockCurrentRowImg">
+            <p class="flexSubElementBig" id="currentImg"><img src = "./img/1000.png" alt = "weather image"></p>
+            <p class="flexSubElementSmall" id="currentImgDesc">Sunny</p>
+          </li>
+          <li class="weatherBlockCurrentRowTemp">
+            <p class="flexSubElementBig" id="currentTemp">25</p>
+            <p class="flexSubElementSmall" id="currentTempDesc">Temperature</p>
+          </li>
+          <li class="weatherBlockCurrentRowSunUp">
+            <p class="flexSubElementBig" id="currentSunUp">7:00</p>
+            <p class="flexSubElementSmall" id="currentSunDesc">Sunrise Time</p>
+          </li>
+          <li class="weatherBlockCurrentRowSunDown">
+            <p class="flexSubElementBig" id="currentSunDown">19:00</p>
+            <p class="flexSubElementSmall" id="currentTempDesc">Sunset Time</p>
+          </li>
+        </ul>
 
-  <div class="row press">
-    <p>C/F</p>
-    <input type="checkbox" onclick="putData()" id="toggle" class="cbx hidden"/>
-    <label for="toggle" class="lbl"></label>
+
+    </div>
+    <div class="weatherBlockByDays">
+      <div class="weatherBlockSearchToggle">
+        <input type="checkbox" onclick="putData()" id="toggle" class="cbx hidden"/>
+        <label for="toggle" class="switcher"></label>
+        <p>C / F</p>
+      </div>
+      <ul class="weatherExtanded">
+        <li class="eachDayWeather">
+          <div id="dayOneHeader">
+            <h2 id="dayOneName">Today</h2>
+            <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
+            <p id="day0con">Sunny</p>
+            <p id="day0Temp">18 c</p>
+          </div>
+          <div class="day0Content">
+            <p id="day0Hum"></p>
+            <p id="day0Pres"></p>
+            <p id="day0Wind"></p>
+            <p id="day0Cloud"></p>
+          </div>
+        </li>
+        <li class="eachDayWeather">
+          <div id="dayTwoHeader">
+            <h2 id="dayTwoName">Tomorrow</h2>
+            <p id="day1Img"><img src = "./img/1000.png" alt = "weather image"></p>
+            <p id="day1con">Sunny</p>
+            <p id="day1Temp">18 c</p>
+          </div>
+          <div class="day1Content">
+            <p id="day1Hum"></p>
+            <p id="day1Pres"></p>
+            <p id="day1Wind"></p>
+            <p id="day1Cloud"></p>
+          </div>
+        </li>
+        <li class="eachDayWeather">
+          <div id="dayThreeHeader">
+            <h2 id="dayThreeName">Third day</h2>
+            <p id="day2Img"><img src = "./img/1000.png" alt = "weather image"></p>
+            <p id="day2con">Sunny</p>
+            <p id="day2Temp">18 c</p>
+          </div>
+          <div class="day2Content">
+            <p id="day2Hum"></p>
+            <p id="day2Pres"></p>
+            <p id="day2Wind"></p>
+            <p id="day2Cloud"></p>
+          </div>
+        </li>
+      </ul>
   </div>
+
   <br>
-  <form action="#">
-    <input id="input" type="text" name="" value="" placeholder="Type your city">
-    <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
-    <p id="warning"></p>
-  </form>
-  <p id="city"></p>
-  <div id="dayOne">
-    <div id="dayOneHeader">
-      <h2 id="dayOneName">Today</h2>
-      <p id="day0Img"></p>
-      <p id="day0con"></p>
-      <p id="day0Temp"></p>
-    </div>
-    <div class="day0Content">
-      <p id="day0Hum"></p>
-      <p id="day0Pres"></p>
-      <p id="day0Wind"></p>
-      <p id="day0Cloud"></p>
-    </div>
-  </div>
-  <div id="dayTwo">
-    <div id="dayTwoHeader">
-      <h2 id="dayTwoName">Tomorrow</h2>
-      <p id="day1Img"></p>
-      <p id="day1con"></p>
-      <p id="day1Temp"></p>
-    </div>
-    <div class="day1Content">
-      <p id="day1Hum"></p>
-      <p id="day1Pres"></p>
-      <p id="day1Wind"></p>
-      <p id="day1Cloud"></p>
-    </div>
-  </div>
-  <div id="dayThree">
-    <div id="dayThreeHeader">
-      <h2 id="dayThreeName">Third day</h2>
-      <p id="day2Img"></p>
-      <p id="day2con"></p>
-      <p id="day2Temp"></p>
-    </div>
-    <div class="day2Content">
-      <p id="day2Hum"></p>
-      <p id="day2Pres"></p>
-      <p id="day2Wind"></p>
-      <p id="day2Cloud"></p>
-    </div>
+
+
+
+
+
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="./main.js" charset="utf-8"></script>
+  <!-- <script src="./main.js" charset="utf-8"></script> -->
 </body>
 </html>
