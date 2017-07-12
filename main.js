@@ -45,11 +45,10 @@ function putData() {
 
         document.getElementById(img).innerHTML = '<img src = "./img/' + objData.forecast.forecastday[i].day.condition.code + '.png" alt = "weather image">';
         document.getElementById(cond).innerHTML = "Condition: " + objData.forecast.forecastday[i].day.condition.text;
-        document.getElementById(temp).innerHTML = "Day temperature: " + degree;
-        document.getElementById(hum).innerHTML = "Humidity: " + Math.round(objData.forecast.forecastday[i].day.avghumidity) + "%";
-        // document.getElementById(pres).innerHTML = "Pressure: " + Math.round(objData.forecast.forecastday[i].day.) + " hPa";
-        document.getElementById(wind).innerHTML = "Wind: " + Math.round(objData.forecast.forecastday[i].day.maxwind_kph * 1000/3600) + " m/s";
-        document.getElementById(cloud).innerHTML = "Cloudiness: " + objData.forecast.forecastday[i].hour[0].cloud + "%";
+        document.getElementById(temp).innerHTML = degree;
+        document.getElementById(hum).innerHTML = Math.round(objData.forecast.forecastday[i].day.avghumidity) + "%";
+        document.getElementById(wind).innerHTML = Math.round(objData.forecast.forecastday[i].day.maxwind_kph * 1000/3600) + " m/s";
+        document.getElementById(cloud).innerHTML = objData.forecast.forecastday[i].hour[0].cloud + "%";
     }
 }
 

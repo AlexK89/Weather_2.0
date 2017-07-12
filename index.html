@@ -50,18 +50,26 @@
       </div>
       <ul class="weatherExtanded">
         <li class="eachDayWeather">
-          <div id="dayOneHeader">
-            <h2 id="dayOneName">Today</h2>
-            <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
-            <p id="day0con">Sunny</p>
-            <p id="day0Temp">18 c</p>
-          </div>
-          <div class="day0Content">
-            <p id="day0Hum"></p>
-            <p id="day0Pres"></p>
-            <p id="day0Wind"></p>
-            <p id="day0Cloud"></p>
-          </div>
+          <h2 id="dayOneName">Today</h2>
+          <ul class="day0Content">
+            <li class="day0ContentHeader">
+              <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
+              <p id="day0con">Sunny</p>
+              <p id="day0Temp" class="right">18 c</p>
+            </li>
+            <li class="contentLi">
+              <p id="day0HumDisc" class="left">Humidity</p>
+              <p id="day0Hum" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day0WindDisc" class="left">Wind</p>
+              <p id="day0Wind" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day0CloudDisc" class="left">Cloudiness</p>
+              <p id="day0Cloud" class="right"></p>
+            </li>
+          </ul>
         </li>
         <li class="eachDayWeather">
           <div id="dayTwoHeader">
@@ -102,6 +110,6 @@
 
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <!-- <script src="./main.js" charset="utf-8"></script> -->
+  <script src="./main.js" charset="utf-8"></script>
 </body>
 </html>
