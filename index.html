@@ -1,144 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./style.css">
-  <title>Weather_2.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather_2.0</title>
 </head>
+
 <body>
-  <div class="weatherBlock">
-    <div class="weatherBlockSearch">
-      <form action="#">
-        <input id="input" type="text" name="" value="" placeholder="Type your city">
-        <p id="warning"></p>
-        <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
-      </form>
-
+    <div class="weatherBlock">
+        <div class="weatherBlockSearch">
+            <form action="#">
+                <input id="input" type="text" name="" value="" placeholder="Type your city">
+                <p id="warning"></p>
+                <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
+            </form>
+        </div>
+        <div class="weatherBlockCurrent">
+            <ul class="weatherBlockCurrentRow">
+                <li class="weatherBlockCurrentRowCity">
+                    <p class="flexSubElementBig" id="city"></p>
+                    <p class="flexSubElementSmall">City</p>
+                </li>
+                <li class="weatherBlockCurrentRowImg">
+                    <p class="flexSubElementBig" id="currentImg"></p>
+                </li>
+                <li class="weatherBlockCurrentRowTemp">
+                    <p class="flexSubElementBig" id="currentTemp"></p>
+                    <p class="flexSubElementSmall" id="currentTempDesc">Temperature</p>
+                </li>
+                <li class="weatherBlockCurrentRowSunUp">
+                    <p class="flexSubElementBig" id="currentSunUp"></p>
+                    <p class="flexSubElementSmall" id="currentSunDesc">Sunrise Time</p>
+                </li>
+                <li class="weatherBlockCurrentRowSunDown">
+                    <p class="flexSubElementBig" id="currentSunDown"></p>
+                    <p class="flexSubElementSmall" id="currentTempDesc">Sunset Time</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherBlockByDays">
+            <div class="weatherBlockSearchToggle">
+                <input type="checkbox" onclick="putData()" id="toggle" class="cbx hidden" />
+                <label for="toggle" class="switcher"></label>
+                <p>C / F</p>
+            </div>
+            <ul class="weatherExtanded">
+                <li class="eachDayWeather">
+                    <h2 id="dayOneName">Today</h2>
+                    <ul class="day0Content">
+                        <li class="day0ContentHeader">
+                            <div class="day0ContentHeaderLeft">
+                                <p id="day0Img"></p>
+                            </div>
+                            <div class="day0ContentHeaderRight">
+                                <p id="day0Temp" class="right"></p>
+                            </div>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day0HumDisc" class="left">Humidity</p>
+                            <p id="day0Hum" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day0WindDisc" class="left">Wind</p>
+                            <p id="day0Wind" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day0CloudDisc" class="left">Cloudiness</p>
+                            <p id="day0Cloud" class="right"></p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="eachDayWeather">
+                    <h2 id="dayTwoName">Tomorrow</h2>
+                    <ul class="day1Content">
+                        <li class="day1ContentHeader">
+                            <div class="day1ContentHeaderLeft">
+                                <p id="day1Img"></p>
+                            </div>
+                            <div class="day1ContentHeaderRight">
+                                <p id="day1Temp" class="right"></p>
+                            </div>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day1HumDisc" class="left">Humidity</p>
+                            <p id="day1Hum" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day1WindDisc" class="left">Wind</p>
+                            <p id="day1Wind" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day1CloudDisc" class="left">Cloudiness</p>
+                            <p id="day1Cloud" class="right"></p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="eachDayWeather">
+                    <h2 id="dayThreeName">Third Day</h2>
+                    <ul class="day2Content">
+                        <li class="day2ContentHeader">
+                            <div class="day2ContentHeaderLeft">
+                                <p id="day2Img"></p>
+                            </div>
+                            <div class="day2ContentHeaderRight">
+                                <p id="day2Temp" class="right"></p>
+                            </div>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day2HumDisc" class="left">Humidity</p>
+                            <p id="day2Hum" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day2WindDisc" class="left">Wind</p>
+                            <p id="day2Wind" class="right"></p>
+                        </li>
+                        <li class="contentLi">
+                            <p id="day2CloudDisc" class="left">Cloudiness</p>
+                            <p id="day2Cloud" class="right"></p>
+                        </li </ul>
+                </li>
+              </ul>
+        </div>
     </div>
-    <div class="weatherBlockCurrent">
-        <ul class="weatherBlockCurrentRow">
-          <li class="weatherBlockCurrentRowCity">
-            <p class="flexSubElementBig" id="city">Lviv</p>
-            <p class="flexSubElementSmall">City</p>
-          </li>
-          <li class="weatherBlockCurrentRowImg">
-            <p class="flexSubElementBig" id="currentImg"><img src = "./img/1000.png" alt = "weather image"></p>
-            <!-- <p class="flexSubElementSmall" id="currentImgDesc">Sunny</p> -->
-          </li>
-          <li class="weatherBlockCurrentRowTemp">
-            <p class="flexSubElementBig" id="currentTemp">25</p>
-            <p class="flexSubElementSmall" id="currentTempDesc">Temperature</p>
-          </li>
-          <li class="weatherBlockCurrentRowSunUp">
-            <p class="flexSubElementBig" id="currentSunUp">7:00</p>
-            <p class="flexSubElementSmall" id="currentSunDesc">Sunrise Time</p>
-          </li>
-          <li class="weatherBlockCurrentRowSunDown">
-            <p class="flexSubElementBig" id="currentSunDown">19:00</p>
-            <p class="flexSubElementSmall" id="currentTempDesc">Sunset Time</p>
-          </li>
-        </ul>
-
-
-    </div>
-    <div class="weatherBlockByDays">
-      <div class="weatherBlockSearchToggle">
-        <input type="checkbox" onclick="putData()" id="toggle" class="cbx hidden"/>
-        <label for="toggle" class="switcher"></label>
-        <p>C / F</p>
-      </div>
-      <ul class="weatherExtanded">
-        <li class="eachDayWeather">
-          <h2 id="dayOneName">Today</h2>
-          <ul class="day0Content">
-            <li class="day0ContentHeader">
-              <div class="day0ContentHeaderLeft">
-                <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
-                <!-- <p id="day0con">Sunny</p> -->
-              </div>
-              <div class="day0ContentHeaderRight">
-                <p id="day0Temp" class="right">18</p>
-              </div>
-            </li>
-            <li class="contentLi">
-              <p id="day0HumDisc" class="left">Humidity</p>
-              <p id="day0Hum" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day0WindDisc" class="left">Wind</p>
-              <p id="day0Wind" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day0CloudDisc" class="left">Cloudiness</p>
-              <p id="day0Cloud" class="right"></p>
-            </li>
-          </ul>
-        </li>
-        <li class="eachDayWeather">
-          <h2 id="dayTwoName">Tomorrow</h2>
-          <ul class="day1Content">
-            <li class="day1ContentHeader">
-              <div class="day1ContentHeaderLeft">
-                <p id="day1Img"><img src = "./img/1000.png" alt = "weather image"></p>
-                <!-- <p id="day0con">Sunny</p> -->
-              </div>
-              <div class="day1ContentHeaderRight">
-                <p id="day1Temp" class="right">18</p>
-              </div>
-            </li>
-            <li class="contentLi">
-              <p id="day1HumDisc" class="left">Humidity</p>
-              <p id="day1Hum" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day1WindDisc" class="left">Wind</p>
-              <p id="day1Wind" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day1CloudDisc" class="left">Cloudiness</p>
-              <p id="day1Cloud" class="right"></p>
-            </li>
-          </ul>
-        </li>
-        <li class="eachDayWeather">
-          <h2 id="dayThreeName">Tomorrow</h2>
-          <ul class="day2Content">
-            <li class="day2ContentHeader">
-              <div class="day2ContentHeaderLeft">
-                <p id="day2Img"><img src = "./img/1000.png" alt = "weather image"></p>
-                <!-- <p id="day0con">Sunny</p> -->
-              </div>
-              <div class="day2ContentHeaderRight">
-                <p id="day2Temp" class="right">18</p>
-              </div>
-            </li>
-            <li class="contentLi">
-              <p id="day2HumDisc" class="left">Humidity</p>
-              <p id="day2Hum" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day2WindDisc" class="left">Wind</p>
-              <p id="day2Wind" class="right"></p>
-            </li>
-            <li class="contentLi">
-              <p id="day2CloudDisc" class="left">Cloudiness</p>
-              <p id="day2Cloud" class="right"></p>
-            </li
-          </ul>
-        </li>
-      </ul>
-  </div>
-
-  <br>
-
-
-
-
-
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="./main.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./main.js" charset="utf-8"></script>
 </body>
+
 </html>
