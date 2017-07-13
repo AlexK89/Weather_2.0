@@ -96,7 +96,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 // Submit form to get weather;
 //==========================
 function inputVal() {
-    if (document.getElementById("input").value) {
+    if (document.getElementById("input").value || document.getElementById("input").value == "") {
         $.ajax({
             url: "https://api.apixu.com/v1/forecast.json?key=32b5b567c77b4a20aa5161100170807&q=" + document.getElementById("input").value + "&days=3",
             success: function(result) {
