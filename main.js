@@ -15,9 +15,9 @@ if (date.getDay() + 2 > 6) {
 //==========================
 
 function putData() {
-    var curDegree = Math.round(objData.current.temp_c);
+    var curDegree = Math.round(objData.current.temp_c) + ' <span class = "celDeg">C</span>';
     if (document.getElementById("toggle").checked) {
-        curDegree = Math.round(objData.current.temp_c * 9 / 5) + 32;
+        curDegree = Math.round(objData.current.temp_c * 9 / 5) + 32 + ' <span class = "farDeg">F</span>';
     }
     document.getElementById("city").innerHTML = objData.location.name;
     document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" id = "currentImg">';
@@ -33,7 +33,7 @@ function putData() {
         var pres = "day" + i + "Pres";
         var wind = "day" + i + "Wind";
         var cloud = "day" + i + "Cloud";
-        var degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c);
+        var degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c) + '<span class = "celDeg">C</span>';
         var altImg = "dayImg" + i;
 
         //==========================
@@ -41,7 +41,7 @@ function putData() {
         //==========================
 
         if (document.getElementById("toggle").checked) {
-            degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c * 9 / 5) + 32;
+            degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c * 9 / 5) + 32 + '<span class = "farDeg">F</span>';
         }
         // =========================
 
@@ -87,7 +87,6 @@ function success(pos) {
 }
 
 function error(err) {
-    // document.getElementById("block").innerHTML = "ERROR " + err.code + ":" + err.message;
     console.warn("ERROR " + err.code + " " + err.message);
 }
 

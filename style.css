@@ -170,6 +170,9 @@ body {
 #currentTemp, #currentSunUp, #currentSunDown {
     font-size: 2em;
 }
+.celDeg, .farDeg {
+	font-size: .6em;
+}
 
 .weatherBlockCurrentRowImg p {
     height: 100px;
@@ -292,11 +295,11 @@ body {
 }
 
 .day0ContentHeaderLeft, .day1ContentHeaderLeft, .day2ContentHeaderLeft {
-    width: 152px;
+    width: 140px;
 }
 
 .day0ContentHeaderRight, .day1ContentHeaderRight, .day2ContentHeaderRight {
-    width: 83px;
+    width: 120px;
 }
 
 #day0Temp, #day1Temp, #day2Temp {
@@ -306,7 +309,7 @@ body {
     margin-top: 3px;
     text-align: center;
     line-height: 72px;
-    width: 83px;
+    width: 120px;
 }
 
 .day0Content li:nth-child(2), .day1Content li:nth-child(2), .day2Content li:nth-child(2) {
