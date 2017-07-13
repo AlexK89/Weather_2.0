@@ -12,9 +12,10 @@
     <div class="weatherBlockSearch">
       <form action="#">
         <input id="input" type="text" name="" value="" placeholder="Type your city">
+        <p id="warning"></p>
         <button type="submit" name="button" onclick="inputVal()" id="search">Search</button>
       </form>
-      <p id="warning"></p>
+
     </div>
     <div class="weatherBlockCurrent">
         <ul class="weatherBlockCurrentRow">
@@ -24,7 +25,7 @@
           </li>
           <li class="weatherBlockCurrentRowImg">
             <p class="flexSubElementBig" id="currentImg"><img src = "./img/1000.png" alt = "weather image"></p>
-            <p class="flexSubElementSmall" id="currentImgDesc">Sunny</p>
+            <!-- <p class="flexSubElementSmall" id="currentImgDesc">Sunny</p> -->
           </li>
           <li class="weatherBlockCurrentRowTemp">
             <p class="flexSubElementBig" id="currentTemp">25</p>
@@ -53,9 +54,13 @@
           <h2 id="dayOneName">Today</h2>
           <ul class="day0Content">
             <li class="day0ContentHeader">
-              <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
-              <p id="day0con">Sunny</p>
-              <p id="day0Temp" class="right">18 c</p>
+              <div class="day0ContentHeaderLeft">
+                <p id="day0Img"><img src = "./img/1000.png" alt = "weather image"></p>
+                <!-- <p id="day0con">Sunny</p> -->
+              </div>
+              <div class="day0ContentHeaderRight">
+                <p id="day0Temp" class="right">18</p>
+              </div>
             </li>
             <li class="contentLi">
               <p id="day0HumDisc" class="left">Humidity</p>
@@ -72,32 +77,56 @@
           </ul>
         </li>
         <li class="eachDayWeather">
-          <div id="dayTwoHeader">
-            <h2 id="dayTwoName">Tomorrow</h2>
-            <p id="day1Img"><img src = "./img/1000.png" alt = "weather image"></p>
-            <p id="day1con">Sunny</p>
-            <p id="day1Temp">18 c</p>
-          </div>
-          <div class="day1Content">
-            <p id="day1Hum"></p>
-            <p id="day1Pres"></p>
-            <p id="day1Wind"></p>
-            <p id="day1Cloud"></p>
-          </div>
+          <h2 id="dayTwoName">Tomorrow</h2>
+          <ul class="day1Content">
+            <li class="day1ContentHeader">
+              <div class="day1ContentHeaderLeft">
+                <p id="day1Img"><img src = "./img/1000.png" alt = "weather image"></p>
+                <!-- <p id="day0con">Sunny</p> -->
+              </div>
+              <div class="day1ContentHeaderRight">
+                <p id="day1Temp" class="right">18</p>
+              </div>
+            </li>
+            <li class="contentLi">
+              <p id="day1HumDisc" class="left">Humidity</p>
+              <p id="day1Hum" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day1WindDisc" class="left">Wind</p>
+              <p id="day1Wind" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day1CloudDisc" class="left">Cloudiness</p>
+              <p id="day1Cloud" class="right"></p>
+            </li>
+          </ul>
         </li>
         <li class="eachDayWeather">
-          <div id="dayThreeHeader">
-            <h2 id="dayThreeName">Third day</h2>
-            <p id="day2Img"><img src = "./img/1000.png" alt = "weather image"></p>
-            <p id="day2con">Sunny</p>
-            <p id="day2Temp">18 c</p>
-          </div>
-          <div class="day2Content">
-            <p id="day2Hum"></p>
-            <p id="day2Pres"></p>
-            <p id="day2Wind"></p>
-            <p id="day2Cloud"></p>
-          </div>
+          <h2 id="dayThreeName">Tomorrow</h2>
+          <ul class="day2Content">
+            <li class="day2ContentHeader">
+              <div class="day2ContentHeaderLeft">
+                <p id="day2Img"><img src = "./img/1000.png" alt = "weather image"></p>
+                <!-- <p id="day0con">Sunny</p> -->
+              </div>
+              <div class="day2ContentHeaderRight">
+                <p id="day2Temp" class="right">18</p>
+              </div>
+            </li>
+            <li class="contentLi">
+              <p id="day2HumDisc" class="left">Humidity</p>
+              <p id="day2Hum" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day2WindDisc" class="left">Wind</p>
+              <p id="day2Wind" class="right"></p>
+            </li>
+            <li class="contentLi">
+              <p id="day2CloudDisc" class="left">Cloudiness</p>
+              <p id="day2Cloud" class="right"></p>
+            </li
+          </ul>
         </li>
       </ul>
   </div>

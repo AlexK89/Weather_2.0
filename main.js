@@ -15,36 +15,38 @@ if (date.getDay()+2 > 6) {
 //==========================
 
 function putData() {
-    var curDegree = Math.round(objData.current.temp_c) + " C";
+    var curDegree = Math.round(objData.current.temp_c);
     if (document.getElementById("toggle").checked) {
-        curDegree = Math.round(objData.current.temp_c) * 9 / 5 + 32 + " F";
+        curDegree = Math.round(objData.current.temp_c * 9 / 5) + 32;
     }
     document.getElementById("city").innerHTML = objData.location.name;
-    document.getElementById("currentImgDesc").innerHTML = objData.current.condition.text;
-    document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" alt = "weather image">';
+    document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" id = "currentImg">';
+    document.getElementById("currentImg").setAttribute("alt" , objData.current.condition.text);
     document.getElementById("currentTemp").innerHTML = curDegree;
 
     for (var i = 0; i < 3; i++) {
         var img = "day" + i + "Img";
-        var cond = "day" + i + "con";
+        // var cond = "day" + i + "con";
         var temp = "day" + i + "Temp";
         var hum = "day" + i + "Hum";
         var pres = "day" + i + "Pres";
         var wind = "day" + i + "Wind";
         var cloud = "day" + i + "Cloud";
-        var degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c) + " C";
+        var degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c);
+        var altImg = "dayImg"+i;
 
         //==========================
         // Switch Celsius to Fahrenheit
         //==========================
 
         if (document.getElementById("toggle").checked) {
-            degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c) * 9 / 5 + 32 + " F";
+            degree = Math.round(objData.forecast.forecastday[i].day.avgtemp_c * 9 / 5) + 32;
         }
         // =========================
 
-        document.getElementById(img).innerHTML = '<img src = "./img/' + objData.forecast.forecastday[i].day.condition.code + '.png" alt = "weather image">';
-        document.getElementById(cond).innerHTML = "Condition: " + objData.forecast.forecastday[i].day.condition.text;
+        document.getElementById(img).innerHTML = '<img src = "./img/' + objData.forecast.forecastday[i].day.condition.code + '.png" id="' + altImg +'">';
+        document.getElementById(altImg).setAttribute("alt" , objData.forecast.forecastday[i].day.condition.text);
+        // document.getElementById(cond).innerHTML = objData.forecast.forecastday[i].day.condition.text;
         document.getElementById(temp).innerHTML = degree;
         document.getElementById(hum).innerHTML = Math.round(objData.forecast.forecastday[i].day.avghumidity) + "%";
         document.getElementById(wind).innerHTML = Math.round(objData.forecast.forecastday[i].day.maxwind_kph * 1000/3600) + " m/s";

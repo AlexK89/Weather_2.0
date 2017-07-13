@@ -7,15 +7,15 @@ body {
 }
 /* Main sections in Main block*/
 .weatherBlock {
-	background: rgb(246, 135, 143);
-	width: 66%;
-	max-width: 920px;
+	/*background: rgb(246, 135, 143);*/
+	width: 100%;
+	max-width: 940px;
 	display: block;
 	margin: auto;
-	padding: 10px 2%;
+	padding: 10px 0 0;
 }
 .weatherBlock img {
-	width:50px;
+	width:80px;
 }
 .weatherBlockSearch,
 .weatherBlockCurrent,
@@ -25,6 +25,7 @@ body {
 	padding: 10px 2%;
 	margin-top: 20px;
 }
+
 /*=========================*/
 
 /* weatherBlockSearch section*/
@@ -33,18 +34,18 @@ body {
 	display: block;
 	width: 90%;
 	margin: auto;
-	height: 40px;
-	padding-top: 5px;
+	min-height: 78px;
 }
 
 #input {
-	width:67%;
+	display: block;
 	height: 28px;
+	width: 80%;
+	margin: auto;
 	border: none;
 	border-bottom: 2px solid #fff;
 	background: none;
 	outline: 0;
-	padding-left: 5px;
 	color: #fff;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -59,22 +60,27 @@ body {
 :-moz-placeholder { /* Firefox 18- */
   color: #fff;
 }
-
+#input:-webkit-autofill {
+	-webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+	-webkit-transition-delay: 9999s;
+}
 #search {
-	width: 30%;
+	display: block;
+	width: 180px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 5px;
 	height: 32px;
-	margin-left: 10px;
 	border: 0;
 	background: #fff;
 }
 #warning {
-	display: inline-block;
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
+	display: block;
+	width: 80%;
+	margin: auto;
+	padding-top: 5px;
 	padding-left: 5px;
 	text-align: left;
-	margin-top: 0;
 	color: #fff;
 	font-style: italic;
 }
@@ -82,10 +88,12 @@ body {
 /*Today Saction*/
 
 .weatherBlockCurrentRow,
-.weatherExtanded {
+.weatherExtanded,
+.day0ContentHeader,
+.day1ContentHeader,
+.day2ContentHeader {
   padding: 0;
   margin: 0;
-
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -93,14 +101,19 @@ body {
   display: flex;
   -webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.weatherExtanded {
+	margin-top: -20px;
+	justify-content: space-around;
 }
 
 .weatherBlockCurrentRow li {
   background: tomato;
   width: 150px;
   height: 100px;
-  /*margin-top: 10px;*/
+	margin: 20px 10px;
   color: white;
   font-weight: bold;
   font-size: 1em;
@@ -126,12 +139,13 @@ body {
 /*Extended weather section*/
 
 .weatherExtanded li {
-	width: 250px;
+	width: 260px;
 	background: yellow;
 }
 /*Toggle*/
 .weatherBlockSearchToggle {
 	height: 40px;
+	padding: 10px 10px 10px 14px;
 }
 .switcher {
 	position: relative;
@@ -186,12 +200,92 @@ body {
 /*=========================*/
 
 /*Day cards*/
+.eachDayWeather {
+	margin: 20px 10px;
+	padding: 0 10px;
+}
 
-.eachDayWeather p {
+.eachDayWeather h2 {
+	margin-bottom: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid red;
+}
+#day0Img,
+#day1Img,
+#day2Img,
+#day0con,
+#day1con,
+#day2con {
+	margin: 0;
+	padding-left: 2px;
+}
+#day0Img img,
+#day1Img img,
+#day2Img img {
+	margin-top: -7px;
+	width: 90px;
+}
+#day0con,
+#day1con,
+#day2con {
+	padding-left: 15px;
+	margin-top: -5px;
+}
+.day0ContentHeader,
+.day1ContentHeader,
+.day2ContentHeader {
+	clear: both;
+	padding-top: 15px;
+}
+.day0ContentHeaderLeft,
+.day0ContentHeaderRight,
+.day1ContentHeaderLeft,
+.day1ContentHeaderRight,
+.day2ContentHeaderLeft,
+.day2ContentHeaderRight {
+	min-height: 72px;
+	height: auto;
+}
+.day0ContentHeaderLeft,
+.day1ContentHeaderLeft,
+.day2ContentHeaderLeft {
+	width: 152px;
+}
+.day0ContentHeaderRight,
+.day1ContentHeaderRight,
+.day2ContentHeaderRight {
+	width: 83px;
+}
+#day0Temp,
+#day1Temp,
+#day2Temp {
+	float: right;
+	font-size: 4.2em;
+	margin: 0;
+	margin-top: 3px;
+	text-align: center;
+	line-height: 72px;
+	width: 83px;
+}
+.day0Content li:nth-child(2),
+.day1Content li:nth-child(2),
+.day2Content li:nth-child(2) {
+	margin-top: 20px;
+}
+.day0Content li,
+.day1Content li,
+.day2Content li {
+	margin-bottom: 20px;
+}
+.contentLi p {
 	display: inline-block;
 	line-height: 30px;
 	margin-top: 0;
 	margin-bottom: 0;
+	padding-left: 10px;
 }
 .left{
 	float: left;
@@ -199,7 +293,12 @@ body {
 .right {
 	float: right;
 }
-.day0Content {
+.contentLi .right {
+	padding-right: 10px;
+}
+.day0Content,
+.day1Content,
+.day2Content {
 	padding-left: 0;
 	display: block;
 }
