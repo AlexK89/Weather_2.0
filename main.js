@@ -102,10 +102,10 @@ function inputVal() {
             success: function(result) {
                 document.getElementById("warning").innerHTML = "";
                 objData = result;
-                putData();
+                return putData();
             },
             error: function(result) {
-                document.getElementById("warning").innerHTML = "Please write correct city name";
+                return document.getElementById("warning").innerHTML = "Please write correct city name";
             }
         });
     }
