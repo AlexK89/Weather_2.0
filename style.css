@@ -352,3 +352,20 @@ body {
     height: 30px;
     clear: both;
 }
+
+@media (max-width: 953px) {
+  .weatherExtanded li {
+      width: 500px;
+  }
+  .weatherBlockCurrentRow li {
+      width: 250px;
+  }
+}
+@media (max-width: 557px) {
+  .weatherExtanded li {
+      width: 290px;
+  }
+  .weatherBlockCurrentRow li {
+      width: 300px;
+  }
+}

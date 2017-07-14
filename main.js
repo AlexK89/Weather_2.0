@@ -20,8 +20,8 @@ function putData() {
         curDegree = Math.round(objData.current.temp_c * 9 / 5) + 32 + ' <span class = "farDeg">F</span>';
     }
     document.getElementById("city").innerHTML = objData.location.name;
-    document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" id = "currentImg">';
-    document.getElementById("currentImg").setAttribute("alt", objData.current.condition.text);
+    document.getElementById("currentImg").innerHTML = '<img src = "./img/' + objData.current.condition.code + '.png" id = "curImg">';
+    document.getElementById("curImg").setAttribute("alt", objData.current.condition.text);
     document.getElementById("currentTemp").innerHTML = curDegree;
     document.getElementById("currentSunUp").innerHTML = objData.forecast.forecastday[0].astro.sunrise;
     document.getElementById("currentSunDown").innerHTML = objData.forecast.forecastday[0].astro.sunset;
